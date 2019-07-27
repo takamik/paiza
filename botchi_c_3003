@@ -1,0 +1,24 @@
+def get_point (my, en)
+  if (my == 'g' and en == 'c') || (my == 'c' and en == 'p') || (my == 'p' and en == 'g')
+    1
+  else
+    0
+  end
+end
+
+p get_point 'g', 'c'
+p get_point 'g', 'p'
+
+p_a = 0
+p_b = 0
+
+gets
+while line = gets
+  a, b = line.split(/ /)
+#  puts a, b
+  p_a += get_point(a, b)
+  p_b += get_point(b, a)
+end
+
+puts p_a, p_b
+
