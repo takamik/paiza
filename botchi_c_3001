@@ -1,0 +1,10 @@
+pd, st, ed = gets.split(/ /).map(&:to_i)
+#puts pd, s, e
+#pd = gets
+
+for e in st..ed
+  #p e
+  puts e.to_s.rjust(pd, '0')
+end
+
+(st..ed).each { |e| puts e.to_s.rjust(pd, '0')  }
