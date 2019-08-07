@@ -1,11 +1,37 @@
 gets
+pre = gets.strip
+txt = pre
+while s = gets
+#p s
+ s.strip!
+ unchange_flg = true
+ (0...s.length).map do |i|
+p [i, s[0..i], pre[pre.length-(i+1)..], txt]
+
+  break if pre[pre.length-(i+1)..] == nil
+  if unchange_flg && pre.length-(i+1) >= 0 && s[0..i] == pre[pre.length-(i+1)..]
+   txt += s[i+1..s.length]
+#p [s[0..i], txt[txt.length-(i+1)..], txt]
+   unchange_flg = false
+   break
+  end
+ end
+ txt += s if unchange_flg
+ pre = s
+end
+puts txt
+
+###################
+exit
+
+gets
 txt = gets.strip
 while s = gets
 #p s
  s.strip!
  unchange_flg = true
  (0..s.length).map do |i|
-#p [s[0..i], txt[txt.length-(i+1)..], txt]
+p [s[0..i], txt[txt.length-(i+1)..], txt]
   if unchange_flg && s[0..i] == txt[txt.length-(i+1)..]
    txt += s[i+1..s.length]
 #p [s[0..i], txt[txt.length-(i+1)..], txt]
@@ -79,6 +105,16 @@ puts txt
 
 
 
+p 'test1' unless nil
+p 'test2' unless "a" == "b"
+p 'test3' unless "a" == "a"
+p 'test4' if nil
+a = nil
+p 'test5' if a == nil
+exit
+
+
+
 # https://paiza.jp/botchi/challenges/botchi_b_2001/result/b9d6b4c2
 # 
 # https://qiita.com/gestalt/items/d2c663b4be524581747e
@@ -98,14 +134,23 @@ puts txt
 # 
 # 
 # 
-# 
-# 
-# 
-# 
-# 
 
 
 
+#############
+3
+kanpaiz
+paiza
+izaxxappxx
+apple
+letter
+letter
+terter
+rssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+poh 
+p 
+oh
+ssssspohpohzzzz
 
 
 
