@@ -1,0 +1,109 @@
+gets
+txt = gets.strip
+while s = gets
+#p s
+ s.strip!
+ unchange_flg = true
+ (0..s.length).map do |i|
+#p [s[0..i], txt[txt.length-(i+1)..], txt]
+  if unchange_flg && s[0..i] == txt[txt.length-(i+1)..]
+   txt += s[i+1..s.length]
+#p [s[0..i], txt[txt.length-(i+1)..], txt]
+   unchange_flg = false
+  end
+ end
+ txt += s if unchange_flg
+end
+puts txt
+
+###################
+exit
+
+pre = "paiza"
+s = "apple"
+idx = nil
+rev = pre.chars.reverse
+str = s.chars
+
+rev.each_with_index do |e, i|
+#  p "#{i}：#{e}"
+#  p "#{i}：#{str[i]}"
+  
+  #idx = i if e == str[i]
+  #break unless e == str[i]
+
+  unless e == s[i]
+   #idx = i
+   #p i
+   p pre + s[i..s.length]
+   break
+  end
+end
+
+#p [idx, pre, s[idx..s.length]]
+
+############################
+#p "apple".reverse
+#exit
+
+############################
+
+gets
+txt = gets.strip
+#p txt
+while s = gets
+ s.strip!
+#p [s, txt]
+
+ (0..s.length).map do |i|
+#  p [s[0..i], txt[txt.length-(i+1)..], s[i+1..s.length]]
+  if s[0..i] == txt[txt.length-(i+1)..]
+   txt += s[i+1..s.length]
+#puts txt
+  end
+ end
+
+#txt.reverse.chars.each_with_index do |e, i|
+#p [e, s[i]]
+#puts txt[0..i], s[0..i]
+#  unless e[i] == s[i]
+#   txt += s[i..s.length]
+#   break
+#  end
+# end
+# p txt
+end
+
+puts txt
+
+
+
+
+# 
+# 
+# https://qiita.com/gestalt/items/d2c663b4be524581747e
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+
+
+
+
+
+
+
+
+
