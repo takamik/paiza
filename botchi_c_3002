@@ -1,0 +1,33 @@
+while t = gets
+puts !(t =~ /[0-9a-zA-Z]{6,}/) || t =~ /[0-9a-zA-Z](.)\1{2,}/ ? 'Invalid' : 'Valid'
+end
+
+exit
+
+t = gets
+
+p t.match(/[0-9a-zA-Z]{6,}/)
+#p t.match(/\w{6,}/)
+#p t.match(/(\w)\1{2,}/)
+#p t.match(/(\w)\1{3,}/)
+p t.match(/([0-9a-zA-Z])\1{2,}/)
+
+res = "Valid"
+if !(t =~ /[0-9a-zA-Z]{6,}/)
+  res = "Invalid"
+end
+
+if t =~ /[0-9a-zA-Z](.)\1{2,}/
+  res = "Invalid"
+puts "out"
+end
+
+puts res
+
+
+# https://forest-valley17.hatenablog.com/entry/2019/01/29/145735
+# https://qiita.com/jnchito/items/b0839f4f4651c29da408
+# https://qiita.com/sea_ship/items/7c8811b5cf37d700adc4
+
+# https://www.javadrive.jp/ruby/if/index10.html
+
