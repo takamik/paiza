@@ -1,0 +1,63 @@
+W, H, N = gets.strip.split(/ /).map { |i| i.to_i }
+x, y, res = 0, 0, 'valid'
+
+while a = gets
+ case a.strip
+ when 'U'
+  x += 1
+ when 'R'
+  y += 1
+ when 'D'
+  x -= 1
+ when 'L'
+  y -= 1
+ end
+
+ unless (0...H).member?(x) && (0...W).member?(y)
+  res = 'invalid'
+  break
+ end
+end
+puts res
+
+exit
+###################
+
+W, H, N = gets.strip.split(/ /).map { |i| i.to_i }
+p [W, H, N]
+
+x, y, res = 0, 0, 'valid'
+
+while a = gets
+# p a.strip
+ case a.strip
+ when 'U'
+  p 'up'
+  x += 1
+ when 'R'
+  p 'right'
+  y += 1
+ when 'D'
+  p 'down'
+  x -= 1
+ when 'L'
+  p 'left'
+  y -= 1
+ end
+
+ unless (0...H).member?(x) && (0...W).member?(y)
+  res = 'invalid'
+  p "break"
+ end
+
+ p [x, (0...H).member?(x), y, (0...W).member?(y)]
+ #puts 'ue' if a == 'U'
+end
+puts res
+
+# https://paiza.jp/botchi/challenges/botchi_b_2003
+# 
+# https://qiita.com/may88seiji/items/ce9396a4c267a3d449ae
+# https://qiita.com/dd511805/items/10b18541707f800055bb
+# https://qiita.com/natsume/items/0bfd7c34b8383e25ee8f
+# https://qiita.com/Sa2Knight/items/6e42b11d297c50c49253
